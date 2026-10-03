@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PANTHEON | Enterprise IT & Consulting</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Assets/favicon.PNG" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN for instant local viewing without Node.js) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              midnight: '#0B1F3B',
+              peacock: '#0057FF',
+              teal: '#008F9A',
+              emerald: '#10B981',
+              mint: '#A7F3D0',
+              champagne: '#E8D6A7',
+              cloud: '#F7F9FB',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="antialiased min-h-screen relative">
+
+  <!-- Global Background for entire site -->
+  <div id="hero-bg" class="fixed inset-0 z-[-3] bg-cover bg-center"
+    style="background-image: url('Assets/hero section.PNG'); transform: scale(1.15);"></div>
+  <div class="fixed inset-0 z-[-2] bg-brand-midnight/60 backdrop-blur-[2px] pointer-events-none"></div>
+
+  <!-- NAVIGATION -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="bg-glass rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300">
+
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center gap-2">
+          <img src="Assets/logo.PNG" alt="Pantheon Logo" class="h-8 w-auto object-contain" />
+          <span class="font-sans font-bold text-xl tracking-widest text-white">PANTHEON</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <ul class="flex space-x-8">
+            <li><a href="#services"
+                class="text-sm font-medium text-brand-cloud/80 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#why-choose-us"
+                class="text-sm font-medium text-brand-cloud/80 hover:text-white transition-colors">Why Choose Us</a>
+            </li>
+            <li><a href="#process"
+                class="text-sm font-medium text-brand-cloud/80 hover:text-white transition-colors">Our Process</a></li>
+            <li><a href="#contact"
+                class="text-sm font-medium text-brand-cloud/80 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+          <a href="#contact" class="btn-primary text-sm py-2 px-5">
+            Get Started <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-brand-cloud hover:text-white focus:outline-none p-2">
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer"
+    class="fixed inset-0 z-40 bg-brand-midnight/95 backdrop-blur-3xl transition-transform duration-300 ease-in-out transform translate-x-full md:hidden">
+    <div class="flex flex-col h-full justify-center px-8 space-y-8">
+      <a href="#services"
+        class="mobile-link text-3xl font-semibold text-white/90 hover:text-white hover:pl-4 transition-all">Services</a>
+      <a href="#why-choose-us"
+        class="mobile-link text-3xl font-semibold text-white/90 hover:text-white hover:pl-4 transition-all">Why Choose
+        Us</a>
+      <a href="#process"
+        class="mobile-link text-3xl font-semibold text-white/90 hover:text-white hover:pl-4 transition-all">Our
+        Process</a>
+      <a href="#contact"
+        class="mobile-link text-3xl font-semibold text-white/90 hover:text-white hover:pl-4 transition-all">Contact</a>
+      <div class="pt-8">
+        <a href="#contact" class="mobile-link btn-primary w-full text-lg py-4">
+          Get Started <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex flex-col justify-center min-h-[90vh] overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] max-w-5xl">
+        Empowering Your Business Through <br class="hidden md:block" />
+        <span
+          class="text-gradient bg-gradient-to-r from-brand-peacock via-brand-teal to-brand-emerald">Innovation</span>
+      </h1>
+
+      <p class="mt-4 text-lg sm:text-xl text-brand-cloud/70 max-w-3xl mb-10 font-medium">
+        Expert IT Consulting, Skilled Manpower Solutions, and Sustainable Solar Project Management.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+        <a href="#services" class="btn-primary text-lg px-8 py-4 w-full sm:w-auto">
+          Explore Services <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+        <a href="#contact" class="btn-secondary text-lg px-8 py-4 w-full sm:w-auto">
+          Contact Us <i data-lucide="message-square" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <div class="mt-20 pt-8 border-t border-white/10 flex items-center justify-center gap-3">
+        <i data-lucide="shield-check" class="w-6 h-6 text-brand-emerald"></i>
+        <span class="text-sm sm:text-base font-medium text-brand-cloud/80 tracking-wide uppercase">
+          Built on Decades of Enterprise Engineering & Leadership
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core Services</h2>
+        <p class="text-brand-cloud/70 text-lg max-w-2xl mx-auto">Comprehensive solutions tailored to accelerate your
+          growth and operational efficiency.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- IT Consulting -->
+        <div class="bg-glass-card rounded-2xl p-8 flex flex-col h-full group relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-brand-peacock/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          </div>
+          <div
+            class="bg-brand-midnight/80 w-16 h-16 rounded-xl flex items-center justify-center border border-white/5 mb-6 shadow-inner">
+            <i data-lucide="cpu" class="w-8 h-8 text-brand-peacock"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">IT Consulting</h3>
+          <p class="text-brand-cloud/80 mb-8 flex-grow leading-relaxed">
+            Transform your business with cutting-edge technology solutions. Strategic IT consulting, enterprise
+            architecture, and end-to-end digital transformation.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">Cloud
+              Solutions</span>
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">System
+              Integration</span>
+          </div>
+          <a href="#contact"
+            class="inline-flex items-center text-sm font-semibold text-brand-cloud hover:text-brand-mint transition-colors mt-auto">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+
+        <!-- Manpower Solutions -->
+        <div class="bg-glass-card rounded-2xl p-8 flex flex-col h-full group relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-brand-peacock/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          </div>
+          <div
+            class="bg-brand-midnight/80 w-16 h-16 rounded-xl flex items-center justify-center border border-white/5 mb-6 shadow-inner">
+            <i data-lucide="users" class="w-8 h-8 text-brand-teal"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Manpower Solutions</h3>
+          <p class="text-brand-cloud/80 mb-8 flex-grow leading-relaxed">
+            Access skilled professionals to drive your initiatives forward. Expert recruitment, engineering placement,
+            and agile contract staffing.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">Talent
+              Acquisition</span>
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">Contract
+              Staffing</span>
+          </div>
+          <a href="#contact"
+            class="inline-flex items-center text-sm font-semibold text-brand-cloud hover:text-brand-mint transition-colors mt-auto">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+
+        <!-- Solar Project Management -->
+        <div class="bg-glass-card rounded-2xl p-8 flex flex-col h-full group relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-brand-peacock/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          </div>
+          <div
+            class="bg-brand-midnight/80 w-16 h-16 rounded-xl flex items-center justify-center border border-white/5 mb-6 shadow-inner">
+            <i data-lucide="sun" class="w-8 h-8 text-brand-champagne"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Solar Project Management</h3>
+          <p class="text-brand-cloud/80 mb-8 flex-grow leading-relaxed">
+            Harness renewable energy with end-to-end solar solutions—from feasibility assessment and engineering to site
+            management and lifecycle maintenance.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">Site
+              Assessment</span>
+            <span
+              class="bg-brand-teal/15 text-brand-mint text-xs font-medium px-3 py-1.5 rounded-full border border-brand-teal/20">Engineering
+              & Installation</span>
+          </div>
+          <a href="#contact"
+            class="inline-flex items-center text-sm font-semibold text-brand-cloud hover:text-brand-mint transition-colors mt-auto">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-choose-us" class="py-24 bg-brand-midnight/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Engineering Excellence as Standard</h2>
+          <p class="text-brand-cloud/70 text-lg mb-12">
+            We don't just deliver services; we build robust foundations. Our approach is grounded in architectural
+            integrity and operational precision.
+          </p>
+
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <i data-lucide="award" class="w-6 h-6 text-brand-peacock"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Senior Industry Leadership</h4>
+                <p class="text-brand-cloud/80 leading-relaxed">Led by industry veterans with deep, practical execution
+                  experience across enterprise IT, technical staffing, and clean energy infrastructure.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <i data-lucide="zap" class="w-6 h-6 text-brand-teal"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Agile & Rapid Deployment</h4>
+                <p class="text-brand-cloud/80 leading-relaxed">Nimble operations designed to execute fast without
+                  bureaucratic overhead or quality trade-offs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-brand-teal/20 blur-[100px] rounded-full z-0"></div>
+          <div
+            class="bg-gradient-to-b from-[#0B1F3B] to-[#081528] border border-brand-teal/30 rounded-3xl p-8 sm:p-12 relative z-10 shadow-2xl">
+            <h3 class="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Leadership Pedigree</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+              <div>
+                <div
+                  class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-peacock to-brand-teal mb-2">
+                  25+ Years</div>
+                <div class="text-sm text-brand-cloud/80 font-medium">Combined Leadership</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-emerald mb-2">
+                  100%</div>
+                <div class="text-sm text-brand-cloud/80 font-medium">Commitment to Quality</div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-emerald"></i>
+                <span class="font-semibold text-brand-cloud">Enterprise-Grade Architecture</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-emerald"></i>
+                <span class="font-semibold text-brand-cloud">Direct Partner Involvement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+        <p class="text-brand-cloud/70 text-lg max-w-2xl mx-auto">A methodical framework designed for clarity, agility,
+          and technical precision.</p>
+      </div>
+
+      <!-- Desktop Layout -->
+      <div class="hidden lg:grid grid-cols-4 gap-6 relative z-10">
+        <!-- Step 1 -->
+        <div class="bg-glass-card rounded-2xl p-8 relative group overflow-hidden">
+          <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+            <span
+              class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-brand-teal to-transparent leading-none">01</span>
+          </div>
+          <div class="text-brand-mint font-bold text-xl mb-4 relative z-10">Step 01</div>
+          <h3 class="text-xl font-bold text-white mb-4 relative z-10">Discovery & Analysis</h3>
+          <p class="text-brand-cloud/80 relative z-10">Deep-dive assessment of technical scope, workflows, and business
+            objectives.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="bg-glass-card rounded-2xl p-8 relative group overflow-hidden">
+          <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+            <span
+              class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-brand-teal to-transparent leading-none">02</span>
+          </div>
+          <div class="text-brand-mint font-bold text-xl mb-4 relative z-10">Step 02</div>
+          <h3 class="text-xl font-bold text-white mb-4 relative z-10">Strategy & Architecture</h3>
+          <p class="text-brand-cloud/80 relative z-10">Detailed roadmaps, architecture blueprints, and clear milestones.
+          </p>
+        </div>
+        <!-- Step 3 -->
+        <div class="bg-glass-card rounded-2xl p-8 relative group overflow-hidden">
+          <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+            <span
+              class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-brand-teal to-transparent leading-none">03</span>
+          </div>
+          <div class="text-brand-mint font-bold text-xl mb-4 relative z-10">Step 03</div>
+          <h3 class="text-xl font-bold text-white mb-4 relative z-10">Precision Implementation</h3>
+          <p class="text-brand-cloud/80 relative z-10">Agile, milestone-based execution with total transparency.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="bg-glass-card rounded-2xl p-8 relative group overflow-hidden">
+          <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+            <span
+              class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-brand-teal to-transparent leading-none">04</span>
+          </div>
+          <div class="text-brand-mint font-bold text-xl mb-4 relative z-10">Step 04</div>
+          <h3 class="text-xl font-bold text-white mb-4 relative z-10">Support & Optimization</h3>
+          <p class="text-brand-cloud/80 relative z-10">Ongoing technical handoff, system monitoring, and performance
+            tuning.</p>
+        </div>
+      </div>
+
+      <!-- Mobile Timeline -->
+      <div class="lg:hidden relative z-10 ml-4">
+        <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-brand-teal/20"></div>
+        <div
+          class="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-peacock via-brand-teal to-brand-emerald opacity-50 blur-[2px]">
+        </div>
+        <div class="space-y-12 pb-8">
+          <div class="relative pl-10">
+            <div
+              class="absolute left-[-5px] top-1.5 w-3 h-3 rounded-full bg-brand-teal shadow-[0_0_10px_2px_rgba(0,143,154,0.6)] z-10">
+            </div>
+            <div class="bg-glass-card rounded-2xl p-6">
+              <div class="text-brand-mint font-bold text-sm mb-2">STEP 01</div>
+              <h3 class="text-xl font-bold text-white mb-3">Discovery & Analysis</h3>
+              <p class="text-brand-cloud/80">Deep-dive assessment of technical scope, workflows, and business
+                objectives.</p>
+            </div>
+          </div>
+          <div class="relative pl-10">
+            <div
+              class="absolute left-[-5px] top-1.5 w-3 h-3 rounded-full bg-brand-teal shadow-[0_0_10px_2px_rgba(0,143,154,0.6)] z-10">
+            </div>
+            <div class="bg-glass-card rounded-2xl p-6">
+              <div class="text-brand-mint font-bold text-sm mb-2">STEP 02</div>
+              <h3 class="text-xl font-bold text-white mb-3">Strategy & Architecture</h3>
+              <p class="text-brand-cloud/80">Detailed roadmaps, architecture blueprints, and clear milestones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 relative overflow-hidden">
+    <!-- Bottom Section Background -->
+    <div class="absolute inset-0 z-[-2] bg-cover bg-center"
+      style="background-image: url('Assets/bottom\ section.PNG');"></div>
+    <div class="absolute inset-0 z-[-1] bg-brand-midnight/70 backdrop-blur-md"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
+        <p class="text-brand-cloud/70 text-lg max-w-2xl mx-auto">Ready to discuss your next project? Speak directly with
+          our team.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <!-- Form -->
+        <div class="lg:col-span-3">
+          <div class="bg-glass rounded-3xl p-6 sm:p-10">
+            <form onsubmit="event.preventDefault(); alert('Message sent successfully!');" class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-brand-cloud/80 mb-2">Full Name</label>
+                  <input type="text" required class="w-full glass-input rounded-xl px-4 py-3 text-[16px]">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-brand-cloud/80 mb-2">Business Email</label>
+                  <input type="email" required class="w-full glass-input rounded-xl px-4 py-3 text-[16px]">
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-brand-cloud/80 mb-2">Phone Number</label>
+                  <input type="tel" class="w-full glass-input rounded-xl px-4 py-3 text-[16px]">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-brand-cloud/80 mb-2">Service Interest</label>
+                  <select class="w-full glass-input rounded-xl px-4 py-3 text-[16px] appearance-none">
+                    <option value="it" class="bg-brand-midnight">IT Consulting</option>
+                    <option value="manpower" class="bg-brand-midnight">Manpower Solutions</option>
+                    <option value="solar" class="bg-brand-midnight">Solar Project Management</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-brand-cloud/80 mb-2">Message</label>
+                <textarea rows="4" required
+                  class="w-full glass-input rounded-xl px-4 py-3 text-[16px] resize-none"></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full sm:w-auto px-8">
+                Send Message <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Info Card -->
+        <div class="lg:col-span-2">
+          <div class="bg-glass rounded-3xl p-8 sm:p-10 h-full">
+            <h3 class="text-2xl font-bold text-white mb-8">Contact Information</h3>
+            <div class="space-y-8">
+              <a href="mailto:info@pantheon.com" class="flex items-start gap-4 group">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-peacock/20 transition-colors">
+                  <i data-lucide="mail" class="w-5 h-5 text-brand-mint"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-brand-cloud/70 mb-1">Email Us</div>
+                  <div class="text-white font-medium text-lg group-hover:text-brand-teal transition-colors">
+                    info@pantheon.com</div>
+                </div>
+              </a>
+              <a href="tel:+15551234567" class="flex items-start gap-4 group">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-peacock/20 transition-colors">
+                  <i data-lucide="phone" class="w-5 h-5 text-brand-mint"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-brand-cloud/70 mb-1">Call Us</div>
+                  <div class="text-white font-medium text-lg group-hover:text-brand-teal transition-colors">+1 (555)
+                    123-4567</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#051122] border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <img src="Assets/logo.PNG" alt="Pantheon Logo" class="h-8 w-auto object-contain" />
+          <span class="font-sans font-bold text-xl tracking-widest text-white">PANTHEON</span>
+        </div>
+        <p class="text-brand-cloud/50 text-sm">
+          © 2026 Pantheon. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Icons
+    lucide.createIcons();
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isOpen = false;
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+      if (isOpen) {
+        drawer.classList.remove('translate-x-full');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('translate-x-full');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) toggleMenu();
+      });
+    });
+
+    // Navbar Scroll Logic & Hero Zoom Effect
+    const header = document.getElementById('header');
+    const nav = header.querySelector('nav');
+    const heroBg = document.getElementById('hero-bg');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // Navbar adjustments
+      if (scrollY > 20) {
+        header.classList.replace('py-6', 'py-4');
+        nav.classList.add('shadow-lg', 'shadow-black/20');
+      } else {
+        header.classList.replace('py-4', 'py-6');
+        nav.classList.remove('shadow-lg', 'shadow-black/20');
+      }
+
+      // Hero Background Zoom Out Effect
+      // Start at 1.15 and scale down to 1 based on scroll position (up to ~600px scroll)
+      if (heroBg) {
+        const scale = Math.max(1, 1.15 - (scrollY * 0.0003));
+        heroBg.style.transform = `scale(${scale})`;
+      }
+    });
+  </script>
+</body>
+
+</html>
